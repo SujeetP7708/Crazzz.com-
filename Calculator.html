@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crazzz</title>
+    <link rel="stylesheet" href="Calculator.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div id="h1">
+    <span style="cursor:default;">Crazzz.com</span>
+    <div class="custom-select">
+        <div class="click">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        <div class="select">
+            <div class="options"><a href="FoodWasteManagement.html">Login</a></div>
+            <div class="options">Contact</div>
+            <div class="options">About us</div>
+        </div>
+    </div>
+   </div>
+    <div id="container">
+        <form id="form">
+            <input id="crazzz" type="button" value="Crazzz Cal">
+            <input id="normal" type="button" value="Normal Cal">
+            <div id="result">
+                <input type="text" id="result1" placeholder="0000 0000 0000 0000">
+            </div>
+            <div id="predit">
+                <input type="text" id="predit1" value="">
+            </div>
+            <div id="button1">
+                <input type="button" value="C" onclick="result1.value=''">
+                <input type="button" value="CE" onclick="result1.value=result1.value.toString().slice(0,-1)">
+                <input type="button" value="/" onclick="result1.value+='/'">
+                <input type="button" value="%"onclick="result1.value+='%'">
+                <input type="button" value="7"onclick="result1.value+='7'">
+                <input type="button" value="8"onclick="result1.value+='8'">
+                <input type="button" value="9" onclick="result1.value+= '9'">
+                <input type="button" value="*" onclick="result1.value+='*'">
+                <input type="button" value="4"onclick="result1.value+='4'">
+                <input type="button" value="5"onclick="result1.value+='5'">
+                <input type="button" value="6"onclick="result1.value+='6'">
+                <input type="button" value="-"onclick="result1.value+='-'">
+                <input type="button" value="1"onclick="result1.value+='1'">
+                <input type="button" value="2"onclick="result1.value+='2'">
+                <input type="button" value="3"onclick="result1.value+='3'">
+                <input type="button" value="+"onclick="result1.value+='+'">
+                <input type="button" value="R.O"onclick="result1.value=Math.round(result1.value)">
+                <input type="button" value="0"onclick="result1.value+='0'">
+                <input type="button" value="."onclick="result1.value+='.'">
+                <input type="button" value="=" id="get" onclick="result1.value=eval(result1.value)">
+                <input type="button" id="pred"value="Click to Predit" style="width: 15.2rem;visibility:hidden;">
+            </div>  
+        </form>
+    </div>
+    <script>
+        let m=document.querySelector('#result1')
+        m.addEventListener('keyup',(e)=>{
+            if(e.keyCode===13)
+            m.value=eval(m.value)
+        })
+        let crazzz=document.querySelector('#crazzz')
+        crazzz.addEventListener('click',crazzz1)
+        let normal=document.querySelector('#normal')
+            normal.addEventListener('click',normal1)
+        function crazzz1(){
+            let style1=document.getElementById('crazzz')
+            style1.style.background="white"
+            let style2=document.getElementById('normal')
+            style2.style.background="#FEE715"
+            let style3=document.getElementById('pred')
+            style3.style.visibility="visible"
+            style3.addEventListener('click',re)
+            let style4=document.getElementById('get')
+            style4.style.visibility="hidden"
+            
+        }   
+        function re()
+            {
+                let result=document.getElementById('result1')
+                let pre=document.getElementById('predit1')
+                let pre1=document.getElementById('predit1').value
+                let math=Math.ceil(Math.random()*5)
+                let count;
+                if(math==1)
+                count=eval(result.value)-Math.round(Math.random()*eval(result.value))
+                else if(math==2)
+                count=eval(result.value)+Math.round(Math.random()*eval(result.value))
+                else if(math==3)
+                count=`I forget it !`
+                else if(math==4)
+                count=`Use your Brain !`
+                else
+                count=eval(result.value)
+                result.value=count
+                if(count==pre1)
+                pre.value=`You won it !`
+                else if(pre1=="")
+                pre.value=``
+                else if(pre1==`Not bad !`)
+                pre.value=``
+                else if(count!=pre1)
+                pre.value=`Not bad !`
+                
+                
+            }
+        function normal1()
+        {
+            let style1=document.getElementById('normal')
+            style1.style.background="white"
+            let oppo=document.getElementById('crazzz')
+            oppo.style.background="#FEE715"
+            let body=document.getElementById('container')
+            body.style.background="#101820"
+            let crazzz=document.querySelector('#crazzz')
+            crazzz.addEventListener('click',crazzz1)
+            let get=document.querySelector('#get')
+            get.style.visibility="visible"
+            let get1=document.querySelector('#pred')
+            get1.style.visibility="hidden"
+        }
+        let ok=document.querySelector('.click')
+        ok.addEventListener('click',open)
+        function open()
+        {
+            let o1=document.querySelector('.select')
+            o1.style.visibility="visible"
+            let o2=document.querySelector('#container')
+            o2.addEventListener('click',function(){
+                o1.style.visibility="hidden"
+            })
+            
+        }
+    </script>
+</body>
+</html>

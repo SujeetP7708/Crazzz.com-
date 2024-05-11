@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foodoo</title>
+    <link rel="icon" href="salad (2).png">
+    <link rel="stylesheet" href="FoodWasteManagement.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    
+    <div id="h1">
+        <span style="cursor:default;">Crazzz.com</span>
+        <div class="custom-select">
+            <div class="click">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <div class="select">
+                <div class="options"><a href="Calculator.html">Crazzz Cal</a></div>
+                <div class="options">Contact</div>
+                <div class="options">About us</div>
+            </div>
+        </div>
+    </div>
+    <div id="container">
+    <form action="Calculator.html" id="loginForm">
+        <fieldset>
+        <h2 style="position: relative;top: -19px;left: 23px;">Create Account</h2>
+        <input type="text" placeholder="First name" name="Fname" id="Fname" required><br>
+        <small>Enter the text</small><br>
+        <input type="text" placeholder="Last name"  name="Fname" id="Fname" required><br>
+        <small>Enter the text</small><br>
+        <input type="email" placeholder="Email" name="email" id="email" required><br>
+        <small>Enter the text</small><br>
+        <input type="password" placeholder="Password" name="password" id="password" required><br>
+        <small>Enter the text</small><br>
+        <input type="tel" placeholder="Phone number" name="number" id="number" required><br>
+        <small>Enter the text</small><br>
+        <button type="submit" onclick="make()">Submit</button>
+        </fieldset>
+    </form>
+    </div>
+    <script>
+      let ok=document.querySelector('.click')
+        ok.addEventListener('click',open)
+        function open()
+        {
+            let o1=document.querySelector('.select')
+            o1.style.visibility="visible"
+            let o2=document.querySelector('#container')
+            o2.addEventListener('click',function(){
+                o1.style.visibility="hidden"
+            })
+            
+        }
+        function make()
+        {
+            
+        }
+    </script>
+</body>
+</html>
